@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <base href="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/xicon">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Angular 1</title>
+  </head>
+  
+  <body ng-app="app" class="container">
+
+    <a ui-sref="earth" ui-sref-active="active">Earth</a>
+    <a ui-sref="mars">Mars</a>
+    <a ui-sref="pluto">Pluto</a>
+
+    <ui-view><h3>Home</h3></ui-view>
+
+    <div class="centeronpage">
+      <div class='mydate-control datePicker'>
+          <input name='date' class="" type='text' placeholder='MM/DD/YYYY'>
+          <i class="fa fa-calendar"></i>
+      </div>
+    </div>
+
+  </body>
+  <script src="app/assets/libs/angular.min.js"></script>
+  <script src="app/assets/libs/angular-messages.min.js"></script>
+  <script src="app/assets/libs/angular-ui-router.min.js"></script>
+  
+  <script src="app/assets/libs/jquery.min.js"></script>
+  <script src="app/assets/libs/jquery-ui.min.js"></script>
+  <script src="app/assets/libs/bootstrap.min.js"></script>
+
+  <script src="app/app.js"></script>
+  <script src="app/services/planet.service.js"></script>
+  <script src="app/components/mars.js"></script>
+  <script src="app/components/pluto.js"></script>
+  <script src="app/components/earth.js"></script>
+  <script src="app/shared/input-text.directive.js"></script>
+  <script src="app/assets/js/utils.js"></script>
+</html>
+

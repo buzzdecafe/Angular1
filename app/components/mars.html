@@ -1,0 +1,14 @@
+<div >
+  
+<h3>{{$ctrl.greeting}}</h3>
+
+  <form novalidate class="simple-form">
+
+
+    <label>Name: <input type="text" ng-model="user.name" /></label><br />
+    <label>E-mail: <input type="email" ng-model="user.email" /></label><br />
+    
+    <input type="submit" ng-click="$ctrl.update(user)" value="Save" />
+  
+  </form>
+</div>

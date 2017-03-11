@@ -1,0 +1,15 @@
+<div class="form-group" ng-class="{ 'has-error' : field.$invalid && (!field.$pristine || form.$submitted)}">
+    <label for="{{fieldName}}" class="control-label col-xs-2">{{label}}</label>
+    <div class="col-xs-10">
+        <input type="text" name="{{fieldName}}" class="form-control" ng-model='value' ng-change='onChange()'/>
+          <span class="has-error" ng-show="field.$invalid && (!field.$pristine || form.$submitted)">
+            <p class="control-label" ng-show="field.$error.required">{{label}} is required.</p>
+            <p class="control-label" ng-show="field.$error.minlength">{{label}} minimum length is 5 characters.</p>
+            <p class="control-label" ng-show="field.$error.email">{{label}} is not a valid email address.</p>
+    </span>
+    </div>
+  
+    <div>pristine: {{field.$pristine}}, valid: {{field.$valid}}</div>
+
+</div>
+ 
