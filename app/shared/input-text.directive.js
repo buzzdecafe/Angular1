@@ -47,6 +47,13 @@ angular.module('app')
                 ngModel.$render = function(){
                     scope.value = ngModel.$modelValue;
                 };
+
+                $('[data-toggle="popover"]').popover({
+                    html : true,
+                    content: function() {
+                        return $('.popover-content').html();
+                    }
+                }); 
             }
         };
     });

@@ -23,6 +23,10 @@ gulp.task('web', function (cb) {
     runSequence('dist-clean', 'html', 'less', 'fonts',  cb);
 });
 
+gulp.task('watch', function (cb) {
+    runSequence('html-watch', 'less-watch', 'app-watch', cb);
+});
+
 gulp.task('dist-clean', function (cb) {
     var dest = 'dist';
      pump([gulp.src(['dist']),

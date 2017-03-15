@@ -3,7 +3,6 @@ myApp.service('PlanetService', function (){
         fetch: function(){
             return { nickname:'no longer a planet',
                      fullname: 'Pluto'
-
                     }
         }
     }
