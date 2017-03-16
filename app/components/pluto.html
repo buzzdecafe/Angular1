@@ -8,7 +8,7 @@
 
     <input-text field-name="fullname" label="Full Name" ng-model="$ctrl.planet.fullname" required></input-text>
     <input-text field-name="nickname" label="Nickname" ng-model="$ctrl.planet.nickname" minlength="5"></input-text>
-    <input-text field-name="else" ng-if="$ctrl.planet.else" label="Something" ng-model="$ctrl.planet.else" minlength="5" required></input-text>
+    <input-text field-name="else" ng-if="$ctrl.planet.else" label="Something" ng-model="$ctrl.planet.else" minlength="2" required></input-text>
     <button type="submit" class="btn btn-success col-xs-offset-2">Save</button>
 
 </form>

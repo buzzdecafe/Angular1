@@ -30,7 +30,8 @@ gulp.task('watch', function (cb) {
 gulp.task('dist-clean', function (cb) {
     var dest = 'dist';
      pump([gulp.src(['dist']),
-         clean(dest)
+         clean(dest),
+         gulp.dest(dest)
     ], cb);
 });
 
