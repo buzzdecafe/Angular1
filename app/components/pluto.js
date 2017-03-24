@@ -6,7 +6,7 @@ angular.module('app').component('pluto', {
     controller: function ($scope, NavigationService) {
         var ctrl = this;
         ctrl.greeting = 'Hello pluto !!';
-        
+
         $scope.submit = function(form,model){
             if (!form.$valid ){
                 return false;

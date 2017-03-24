@@ -1,1 +1,9 @@
-{"planet":{"pluto":{"nickname":"no longer a planet, it will rise again, soon.","fullname":"Pluto","else":"Something else"}}}
+{
+    "planet": {
+        "pluto": {
+            "nickname": "no longer a planet, it will rise again, soon.",
+            "fullname": "Pluto",
+            "else":"something"
+        }
+    }
+}

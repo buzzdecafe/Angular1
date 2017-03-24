@@ -1,3 +1,5 @@
 angular.module('app').component('earth', {
-    template: '<h3>Welcome Home</h3>'
+    templateUrl: 'app/components/earth.html',
+    controller: function () {
+    }
 });
