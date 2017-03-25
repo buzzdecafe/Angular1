@@ -4,7 +4,7 @@ angular.module('app')
             restrict: "E",
             require: ['^form', '?ngModel'],
             scope: {
-                label: '@',
+                label: '=label',
                 fieldName: '@',
                 options: '=options'
             },

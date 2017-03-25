@@ -1,17 +1,8 @@
-<div class="col-xs-12">
+
 <div class="form-group" ng-class="{ 'has-error' : field.$invalid && (!field.$pristine || form.$submitted)}">
     <label for="{{fieldName}}" class="control-label col-xs-2">{{label}}</label>
     <div class="col-xs-10">
         <input type="text" name="{{fieldName}}" class="form-control" ng-model='value' ng-change='onChange()'/>
-          <!--<span class="input-group-addon hovershow" ng-show="field.$invalid && (!field.$pristine || form.$submitted)"  
-                rel="popover"
-                data-trigger="hover"
-                data-toggle="popover"
-                data-placement="left"
-                title="Validation Error">
-            <i class="fa fa-exclamation"></i>
-              
-          </span>-->
         <div class="has-error" ng-show="field.$invalid && (!field.$pristine || form.$submitted)">
                 <div class="control-label" ng-show="field.$error.required">{{label}} is required.</div>
                 <div class="control-label" ng-show="field.$error.minlength">{{label}} minimum length is 5 characters.</div>
@@ -19,8 +10,4 @@
         </div>
         <div>pristine: {{field.$pristine}}, valid: {{field.$valid}}</div> 
     </div>
-    
- 
 </div>
-</div>
-

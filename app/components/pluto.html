@@ -6,11 +6,10 @@
         <i class="fa fa-exclamation-triangle"></i><span></span> Please fix the errors and retry
     </div>
 
-    <input-text field-name="fullname" label="{{$ctrl.planet.fullname.label}}" ng-model="$ctrl.planet.fullname.value" required></input-text>
-    <input-text field-name="nickname" label="{{$ctrl.planet.nickname.label}}" ng-model="$ctrl.planet.nickname.value" minlength="5"></input-text>
-    <input-text field-name="else" ng-if="$ctrl.planet.else" label="{{$ctrl.planet.else.label}}" ng-model="$ctrl.planet.else.value" minlength="2" required></input-text>
-   
-    <input-select field-name="state" label="{{$ctrl.planet.state.label}}" options="$ctrl.planet.state.options" ng-model="$ctrl.planet.state.value"></input-select>
+    <input-text field-name="fullname" label="$ctrl.planet.fullname.label" ng-model="$ctrl.planet.fullname.value" required></input-text>
+    <input-text field-name="nickname" label="$ctrl.planet.nickname.label" ng-model="$ctrl.planet.nickname.value" minlength="5"></input-text>
+    <input-text field-name="else" label="$ctrl.planet.else.label" ng-if="$ctrl.planet.else"  ng-model="$ctrl.planet.else.value" minlength="2" required></input-text>
+    <input-select field-name="state" label="$ctrl.planet.state.label" options="$ctrl.planet.state.options" ng-model="$ctrl.planet.state.value"></input-select>
      
     <button type="submit" class="btn btn-success col-xs-offset-2">Save</button>
 
