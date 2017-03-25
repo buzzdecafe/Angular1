@@ -1,9 +1,26 @@
 {
     "planet": {
         "pluto": {
-            "nickname": "no longer a planet, it will rise again, soon.",
-            "fullname": "Pluto",
-            "else":"something"
+
+            "nickname": {"value":"no longer a planet, it will rise again, soon.",
+                         "label": "Nick Name"},
+            "fullname": {"value":"Pluto",
+                         "label": "Full Name"},
+            "else":     {"value": "else",
+                         "label": "Something"},
+            "state":    {"value": "MA",
+                         "label": "State",
+                         "options": [{"key":"CT","value":"Connecticut"},
+                                    {"key":"NJ","value":"New Jersey"},
+                                    {"key":"NY","value":"New York"},
+                                    {"key":"NH","value":"New Hampshire"},
+                                    {"key":"MA","value":"Massachusetts"}]
+                         }
         }
-    }
+    },
+    "states": [{"key":"CT","value":"Connecticut"},
+                                    {"key":"NJ","value":"New Jersey"},
+                                    {"key":"NY","value":"New York"},
+                                    {"key":"NH","value":"New Hampshire"},
+                                    {"key":"MA","value":"Massachusetts"}]
 }

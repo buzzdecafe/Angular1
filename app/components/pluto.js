@@ -7,7 +7,7 @@ angular.module('app').component('pluto', {
         var ctrl = this;
         ctrl.greeting = 'Hello pluto !!';
 
-        $scope.submit = function(form,model){
+        $scope.submit = function(form, model){
             if (!form.$valid ){
                 return false;
             }
@@ -17,3 +17,4 @@ angular.module('app').component('pluto', {
         }
     }
 });
+

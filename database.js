@@ -6,12 +6,15 @@ module.exports = (function(){
 
     var save = function(req,res){
         var data = req.body;
-        db.push("/planet/pluto",data);
+        //db.push("/planet/pluto",data);
         res.status(200).end();
     }
 
     var fetch = function(req,res){
         var data = db.getData("/planet/pluto");
+
+        
+
         res.send(JSON.stringify(data));
     }
 
