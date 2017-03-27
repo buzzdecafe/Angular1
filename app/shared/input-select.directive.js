@@ -26,7 +26,7 @@ angular.module('app')
                 }
 
                 if (hasAttrs) {
-                    $compile(input)(scope);
+                    //$compile(input)(scope);
                 }
  
                 var modelCtrl = element.find('select').controller('ngModel');    // get the NgModelController for the input element
@@ -43,7 +43,6 @@ angular.module('app')
                 ngModel.$render = function(){
                     scope.value = ngModel.$modelValue;
                 };
-
             }
         };
     });

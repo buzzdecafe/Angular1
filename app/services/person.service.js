@@ -1,11 +1,10 @@
-myApp.service('PlanetService', function ($http){
-
+myApp.service('PersonService', function ($http){
     return {
         fetch: function(name){
                     
             var config = {
                         method: 'GET',
-                        url: '/api/planet/fetch',
+                        url: '/api/person/fetch',
                         headers: {
                             "Content-Type": undefined
                         },
@@ -22,7 +21,7 @@ myApp.service('PlanetService', function ($http){
         save: function(path,model){
             var config = {
                         method: 'POST',
-                        url: '/api/planet/save',
+                        url: '/api/person/save',
                         headers: {
                             "Content-Type": undefined
                         },

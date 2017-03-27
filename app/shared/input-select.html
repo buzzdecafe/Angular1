@@ -1,15 +1,10 @@
 <div class="form-group" ng-class="{ 'has-error' : field.$invalid && (!field.$pristine || form.$submitted)}">
     <label for="{{fieldName}}" class="control-label col-xs-2">{{label}}</label>
     <div class="col-xs-10">
-
         <select ng-model="value" 
                 name="{{fieldName}}" 
                 class="form-control" 
-                ng-change='onChange()' >
-            <option ng-repeat="option in options track by $index" value="{{option.key}}">{{option.value}}</option>        
-        </select>
+                ng-options="option.value for option in options track by option.key">
+       </select>
     </div>
-    
-    <!--<div ng-repeat="(key,value) in options track by $index">{{value}}</div>-->
-    <!--<pre>{{options | json}}</pre>-->
 </div>

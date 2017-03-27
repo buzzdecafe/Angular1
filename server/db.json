@@ -1,0 +1,30 @@
+{
+    "planet": {
+        "pluto": {
+
+            "nickname": {"value":"no longer a planet, it will rise again, soon.",
+                         "label": "Nick Name"},
+            "fullname": {"value":"Pluto",
+                         "label": "Full Name"},
+            "else":     {"value": "else",
+                         "label": "Something"},
+            "state":    {"value": "MA",
+                         "label": "State"
+                         }
+        }
+    },
+    "states": [
+                {"key":"CT","value":"Connecticut"},
+                {"key":"NJ","value":"New Jersey"},
+                {"key":"NY","value":"New York"},
+                {"key":"NH","value":"New Hampshire"},
+                {"key":"MA","value":"Massachusetts"}],
+
+    "address": {
+        "street": {"label":"Street", "value":"117 Pickney Ave"},
+        "unit": {"label":"Unit", "value":""},
+        "city": {"label":"City", "value":"Plainville"},
+        "state": {"label":"State", "value":"CT"},
+        "postalCode": {"label":"Zip", "value":"06062"}
+    }                                    
+}

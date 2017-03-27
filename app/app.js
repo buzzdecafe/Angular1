@@ -29,6 +29,16 @@ myApp.config(function ($stateProvider, $locationProvider) {
             name: 'mars',
             url: '/mars',
             component: 'mars'
+        },
+        {
+            name: 'address',
+            url: '/address',
+            component: 'address',
+            resolve: {
+                address: function (PersonService) {
+                    return PersonService.fetch();
+                }
+            }
         }
     ];
 

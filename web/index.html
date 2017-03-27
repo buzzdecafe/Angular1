@@ -16,13 +16,12 @@
   
   <body ng-app="app" class="container">
 
-    <a ui-sref="earth" ui-sref-active="active">Earth</a>
+    <a ui-sref="earth">Earth</a>
     <a ui-sref="mars">Mars</a>
     <a ui-sref="pluto">Pluto</a>
+    <a ui-sref="address">Address</a>
 
     <ui-view><h3>Home</h3></ui-view>
-
-  
 
   </body>
   <script src="app/assets/libs/angular.min.js"></script>
@@ -35,10 +34,12 @@
 
   <script src="app/app.js"></script>
   <script src="app/services/planet.service.js"></script>
+  <script src="app/services/person.service.js"></script>
   <script src="app/services/navigation.service.js"></script>
   <script src="app/components/mars.js"></script>
   <script src="app/components/pluto.js"></script>
   <script src="app/components/earth.js"></script>
+  <script src="app/components/address.js"></script>
   <script src="app/shared/input-text.directive.js"></script>
   <script src="app/shared/input-select.directive.js"></script>
   <script src="app/assets/js/utils.js"></script>

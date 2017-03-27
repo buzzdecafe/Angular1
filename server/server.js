@@ -11,15 +11,18 @@ var bodyParser = require('body-parser');
 var app = express();
 var router = express.Router();
 
-var dist = __dirname + '/dist';
+var dist = __dirname + '/../dist';
 
 var database = require('./database');
 
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use(bodyParser.json()); // support json encoded bodies
 
-app.get('/api/fetch', database.fetch);
-app.post('/api/save', database.save);
+app.get('/api/planet/fetch', database.planet.fetch);
+app.post('/api/planet/save', database.planet.save);
+
+app.get('/api/person/fetch', database.person.fetch);
+app.post('/api/person/save', database.person.save);
 
 //app.use('/api', jsonRouter);
 
