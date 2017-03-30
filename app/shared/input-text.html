@@ -1,12 +1,18 @@
 
-<div class="form-group" ng-class="{ 'has-error' : field.$invalid && (!field.$pristine || form.$submitted)}">
+<div class="form-group" ng-class="{ 'has-error' : field.$invalid && (!field.$pristine || form.$submitted)
+                                   ,'disabled' : isDisabled }">
     <label for="{{fieldName}}" class="control-label col-xs-2">{{label}}</label>
     <div class="col-xs-10">
-        <input type="text" name="{{fieldName}}" class="form-control" ng-model='value' ng-change='onChange()'/>
+        <input type="text" 
+        name="{{fieldName}}" 
+        class="form-control" 
+        ng-model='value' 
+        ng-change='onChange()'
+        ng-disabled='isDisabled'/>
         <div class="has-error" ng-show="field.$invalid && (!field.$pristine || form.$submitted)">
                 <div class="control-label" ng-show="field.$error.required">{{label}} is required.</div>
-                <div class="control-label" ng-show="field.$error.minlength">{{label}} minimum length is X characters.</div>
-                <div class="control-label" ng-show="field.$error.maxlength">{{label}} maximum length is X characters.</div>
+                <div class="control-label" ng-show="field.$error.minlength">{{label}} minimum length is {{minlength}} characters.</div>
+                <div class="control-label" ng-show="field.$error.maxlength">{{label}} maximum length is {{maxlength}} characters.</div>
                 <div class="control-label" ng-show="field.$error.email">{{label}} is not a valid email address.</div>
                 <div class="control-label" ng-show="field.$error.pattern">{{label}} is not valid.</div>
         </div>

@@ -14,17 +14,30 @@
         }
     },
     "states": [
-                {"key":"CT","value":"Connecticut"},
-                {"key":"NJ","value":"New Jersey"},
-                {"key":"NY","value":"New York"},
-                {"key":"NH","value":"New Hampshire"},
-                {"key":"MA","value":"Massachusetts"}],
+                {"value":"CT","display":"Connecticut"},
+                {"value":"NJ","display":"New Jersey"},
+                {"value":"NY","display":"New York"},
+                {"value":"NH","display":"New Hampshire"},
+                {"value":"MA","display":"Massachusetts"}],
 
-    "address": {
-        "street": {"label":"Street", "value":"117 Pickney Ave"},
-        "unit": {"label":"Unit", "value":""},
-        "city": {"label":"City", "value":"Plainville"},
-        "state": {"label":"State", "value":"CT"},
-        "postalCode": {"label":"Zip", "value":"06062"}
-    }                                    
+    "address": {"data":{"street": "742 Evergreen Terrace",
+                        "unit": "1A",
+                        "city": "Springfield",
+                        "state": "OR",
+                        "postalCode": "97403"},
+                 "meta": {  "street": {"label":"Street", "required":"true"},
+                            "unit": {"label":"Unit", "disabled":"true"},
+                            "city": {"label":"City", "required":"true"},
+                            "state": {"label":"State", "required":"true", "placeholder": " - select the state of residence - ",
+                                      "options": [{"key":"CT","value":"Connecticut"},
+                                                    {"key":"NJ","value":"New Jersey"},
+                                                    {"key":"NY","value":"New York"},
+                                                    {"key":"OR","value":"Oregon"},
+                                                    {"key":"NH","value":"New Hampshire"},
+                                                    {"key":"MA","value":"Massachusetts"}]},
+                             "postalCode": {"label":"Zip","placeholder": "Postal Code"},
+                             "note": {"label": "Note" }
+            }
+    }  
+                               
 }

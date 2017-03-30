@@ -4,13 +4,16 @@ angular.module('app')
             restrict: "E",
             require: ['^form', '?ngModel'],
             scope: {
-                label: '=label',
-                fieldName: '@',
-                options: '=options'
+                meta: '=',
+                fieldName: '@'
             },
             replace: true,
             templateUrl: 'app/shared/input-select.html',
             link: function (scope, element, attrs, controllers) {
+                if (!scope.meta) {
+                    return false;
+                }
+
                 var formController = controllers[0];
                 var ngModel = controllers[1];
 
@@ -18,22 +21,30 @@ angular.module('app')
                     return;
                 }
 
-                var input = element.find('select');
-                var hasAttrs = false;
-                if (attrs.required) {
-                    input.attr('required', true);
-                    hasAttrs = true;
+                //TODO: need beter attr override mechanism
+                if (attrs.required){
+                    scope.isRequired = true;
                 }
 
-                if (hasAttrs) {
-                    //$compile(input)(scope);
+                if (attrs.placeholder) {
+                    scope.placeholder = attrs.placeholder;
                 }
- 
-                var modelCtrl = element.find('select').controller('ngModel');    // get the NgModelController for the input element
-                formController.$removeControl(modelCtrl);                       // remove the ModelController from the FormController
-                modelCtrl.$name = scope.fieldName;                              // set the right name
-                formController.$addControl(modelCtrl);                          // add the namend ModelController to the FormController
-                scope.form = formController;                                    // publish the FormController to the scope - so we don't need to mess around with the parent scope.;
+
+                //allow meta data to override inline behavior
+                scope.label = scope.meta.label;
+                scope.isDisabled = scope.meta.disabled === "true";
+                scope.isRequired = scope.isRequired || scope.meta.required === "true";
+                scope.placeholder = scope.placeholder || scope.meta.placeholder || ' - select -';
+                scope.options = scope.meta.options;
+
+                //NOTE: can't compile select element due to doubling of the options list
+
+                //set correct name on the control
+                var modelCtrl = element.find('select').controller('ngModel');
+                formController.$removeControl(modelCtrl);
+                modelCtrl.$name = scope.fieldName;
+                formController.$addControl(modelCtrl);
+                scope.form = formController;
                 scope.field = formController[scope.fieldName];
 
                 scope.onChange = function() {

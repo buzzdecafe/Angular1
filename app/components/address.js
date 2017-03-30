@@ -7,8 +7,6 @@ angular.module('app').component('address', {
         var ctrl = this;
         ctrl.greeting = 'Address Entry';
 
-        
-
         $scope.submit = function(form, model){
             if (!form.$valid ){
                 return false;

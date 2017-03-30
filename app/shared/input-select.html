@@ -4,7 +4,13 @@
         <select ng-model="value" 
                 name="{{fieldName}}" 
                 class="form-control" 
-                ng-options="option.value for option in options track by option.key">
+                ng-options="o.key as o.value for o in options"
+                ng-change='onChange()'
+                ng-required='isRequired'>
+                <option ng-show="true" value="">{{placeholder}}</option>
        </select>
+       <div class="has-error" ng-show="field.$invalid && (!field.$pristine || form.$submitted)">
+                <div class="control-label" ng-show="field.$error.required">{{label}} is required.</div>
+        </div>
     </div>
 </div>

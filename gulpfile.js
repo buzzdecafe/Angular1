@@ -91,7 +91,8 @@ gulp.task('libs', function (cb) {
                     'node_modules/angular-ui-router/release/angular-ui-router.min.js',
                     'node_modules/jquery/dist/jquery.min.js',
                     'node_modules/jquery-ui-dist/jquery-ui.min.js',
-                    'node_modules/bootstrap/dist/js/bootstrap.min.js'
+                    'node_modules/bootstrap/dist/js/bootstrap.min.js',
+                    'app/assets/libs/**/*.js'
                     ]),
          clean(dest),
          gulp.dest(dest)

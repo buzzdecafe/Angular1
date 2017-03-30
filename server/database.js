@@ -26,9 +26,8 @@ module.exports = (function(){
         fetch: function(req,res){
             var data = db.getData("/address");
 
-            var states = db.getData("/states");
-
-            data.state.options = states;
+            //var states = db.getData("/states");
+            //data.state.options = states;
 
             res.send(JSON.stringify(data));
         }
