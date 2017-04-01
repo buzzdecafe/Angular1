@@ -1,4 +1,4 @@
-myApp.service('PlanetService', function ($http){
+app.myApp.service('PlanetService', function ($http){
 
     return {
         fetch: function(name){

@@ -3,6 +3,7 @@ angular.module('app')
         return {
             restrict: "E",
             require: ['^form', '?ngModel'],
+            transclude: true,
             scope: {
                 meta: '=',
                 fieldName: '@'
@@ -10,7 +11,7 @@ angular.module('app')
             replace: true,
             templateUrl: 'app/shared/input-text.html',
             link: function (scope, element, attrs, controllers) {
-                if(!scope.meta){
+                if (!scope.meta){
                     return false;
                 }
 
@@ -53,16 +54,17 @@ angular.module('app')
                     hasAttrs = true;
                 }
 
-                if (attrs.mask) {
-                    input.attr('ui-mask', attrs.mask);
-                    input.attr('ui-mask-placeholder', true);
-                    input.attr('ui-mask-placeholder-char', '_');
-                    hasAttrs = true;
-                }
+                // if (attrs.mask) {
+                //     input.attr('ui-mask', attrs.mask);
+                //     input.attr('ui-mask-placeholder', true);
+                //     input.attr('ui-mask-placeholder-char', '_');
+                //     hasAttrs = true;
+                // }
 
                 if (hasAttrs) {
-                    $compile(input)(scope);
+                   $compile(input)(scope);
                 }
+
                  //set correct name on the control
                 var modelCtrl = element.find('input').controller('ngModel');
                 formController.$removeControl(modelCtrl);
@@ -71,15 +73,22 @@ angular.module('app')
                 scope.form = formController;
                 scope.field = formController[scope.fieldName];
 
-                scope.onChange = function() {
+                scope.showIf = function () {
+                    if (scope.meta.showif) {
+                        if (!scope.$parent.$ctrl['address']['data']['unit']) {
+                            return false;
+                        }
+                    }
+                    return true;
+                };
+
+                scope.onChange = function () {
                     ngModel.$setViewValue(scope.value);
                 };
 
-                ngModel.$render = function(){
+                ngModel.$render = function () {
                     scope.value = ngModel.$modelValue;
                 };
-
-             
             }
         };
     });

@@ -1,6 +1,7 @@
 
 <div class="form-group" ng-class="{ 'has-error' : field.$invalid && (!field.$pristine || form.$submitted)
-                                   ,'disabled' : isDisabled }">
+                                   ,'disabled' : isDisabled }"
+                        ng-show="showIf()">
     <label for="{{fieldName}}" class="control-label col-xs-2">{{label}}</label>
     <div class="col-xs-10">
         <input type="text" 
@@ -16,6 +17,6 @@
                 <div class="control-label" ng-show="field.$error.email">{{label}} is not a valid email address.</div>
                 <div class="control-label" ng-show="field.$error.pattern">{{label}} is not valid.</div>
         </div>
-        <!--<div>pristine: {{field.$pristine}}, valid: {{field.$valid}}</div> -->
+        <!--<div>valid: {{field.$valid}}</div> -->
     </div>
 </div>

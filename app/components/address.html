@@ -10,12 +10,13 @@
     <input-text field-name="unit" meta="$ctrl.address.meta.unit" ng-model="$ctrl.address.data.unit" ></input-text>
     <input-text field-name="city" meta="$ctrl.address.meta.city" ng-model="$ctrl.address.data.city" minLength="2" ></input-text>
     <input-select field-name="state" meta="$ctrl.address.meta.state" ng-model="$ctrl.address.data.state" required ></input-select>
-    <input-text field-name="postalCode" meta="$ctrl.address.meta.postalCode" ng-model="$ctrl.address.data.postalCode" ng-if="$ctrl.address.meta.postalCode"   required minLength="5" pattern="\d{5}(?:[-\s]\d{4})?" mask="99999-9999" placeholder="Zip Code"></input-text>
-    <input-text field-name="note" meta="$ctrl.address.meta.note" ng-model="$ctrl.address.data.note" ng-show="$ctrl.address.meta.note" placeholder="Note"></input-text>
+    <input-text field-name="postalcode" meta="$ctrl.address.meta.postalcode" ng-model="$ctrl.address.data.postalcode" required pattern="\d{5}(?:[-\s]\d{4})?" mask="99999-9999" placeholder="Zip Code"></input-text>
+    <input-text field-name="note" meta="$ctrl.address.meta.note" ng-model="$ctrl.address.data.note"  placeholder="Note" ></input-text>
     <button type="submit" class="btn btn-success pull-right">Save</button>
 </form>
 
-<!--<div>submitted: {{addressform.$submitted}}</div>
 <br/>
-<pre>{{addressform.$error | json}}</pre>-->
+<!--<div>submitted: {{addressform.$submitted}}</div>-->
+
+<!--<pre>{{addressform.$error | json}}</pre>-->
  

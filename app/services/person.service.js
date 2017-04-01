@@ -1,4 +1,4 @@
-myApp.service('PersonService', function ($http){
+app.myApp.service('PersonService', function ($http){
     return {
         fetch: function(name){
                     
