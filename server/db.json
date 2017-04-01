@@ -36,7 +36,11 @@
                                                     {"key":"NH","value":"New Hampshire"},
                                                     {"key":"MA","value":"Massachusetts"}]},
                              "postalcode": {"label":"Zip","placeholder": "Postal Code"},
-                             "note": {"label": "Note", "showif": "unit" }
+                             "note": {"label": "Note", "showif": { "field":"address.data.unit",
+                                                                   "operator": "===",
+                                                                   "operand": "122B" },
+                                                    "disabledif": { "field":"address.data.unit"}
+                                    }
             }
     }  
                                

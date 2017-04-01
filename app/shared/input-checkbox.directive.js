@@ -2,7 +2,7 @@ var app = app || {};
 
 (function () {
     angular.module('app')
-        .directive('inputText', function ($compile) {
+        .directive('inputCheckbox', function ($compile) {
             return {
                 restrict: "E",
                 require: ['^form', '?ngModel'],
@@ -12,7 +12,7 @@ var app = app || {};
                     fieldName: '@'
                 },
                 replace: true,
-                templateUrl: 'app/shared/input-text.html',
+                templateUrl: 'app/shared/input-checkbox.html',
                 link: function (scope, element, attrs, controllers) {
                     if (!scope.meta){
                         return false;

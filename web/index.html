@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html ng-app="app">
   <head>
     <meta charset="UTF-8">
     <base href="">
@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <title>Angular 1</title>
+    <title ng-bind="title">test</title>
   </head>
   
-  <body ng-app="app" class="container">
+  <body  class="container">
 
     <a ui-sref="earth">Earth</a>
     <a ui-sref="mars">Mars</a>
@@ -42,7 +42,6 @@
   <script src="app/components/address.js"></script>
   <script src="app/shared/input-text.directive.js"></script>
   <script src="app/shared/input-select.directive.js"></script>
+  <script src="app/shared/input-helper.js"></script>
   <script src="app/assets/js/utils.js"></script>
 </html>
-
-
