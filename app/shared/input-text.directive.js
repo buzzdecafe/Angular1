@@ -70,17 +70,25 @@ var app = app || {};
 
                     //set correct name on the control
                     var modelCtrl = element.find('input').controller('ngModel');
+                    
                     formController.$removeControl(modelCtrl);
                     modelCtrl.$name = scope.fieldName;
                     formController.$addControl(modelCtrl);
                     scope.form = formController;
                     scope.field = formController[scope.fieldName];
-
-                    scope.showIf = function () {
+                
+                    scope.showif = function () {
                         if (scope.meta.showif) {
                             return app.inputHelper.test(scope.$parent.$ctrl, scope.meta.showif);
                         }
                         return true;
+                    };
+
+                    scope.disabledif = function () {
+                        if (scope.meta.disabledif) {
+                            return app.inputHelper.test(scope.$parent.$ctrl, scope.meta.disabledif);
+                        }
+                        return false;
                     };
 
                     scope.requiredIf = function () {

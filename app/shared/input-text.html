@@ -1,7 +1,7 @@
 
 <div class="form-group" ng-class="{ 'has-error' : field.$invalid && (!field.$pristine || form.$submitted)
                                    ,'disabled' : isDisabled }"
-                        ng-show="showIf()">
+                        ng-show="showif()">
     <label for="{{fieldName}}" class="control-label col-xs-2">{{label}}</label>
     <div class="col-xs-10">
         <input  type="text" 
@@ -9,7 +9,7 @@
                 class="form-control" 
                 ng-model='value' 
                 ng-change='onChange()'
-                ng-disabled='isDisabled'
+                ng-disabled='isDisabled || disabledif() || !showif()'
                 ng-require="requiredIf()"/>
         <div class="has-error" ng-show="field.$invalid && (!field.$pristine || form.$submitted)">
                 <div class="control-label" ng-show="field.$error.required">{{label}} is required.</div>

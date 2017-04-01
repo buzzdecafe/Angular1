@@ -12,7 +12,7 @@
     <input-select field-name="state" meta="$ctrl.address.meta.state" ng-model="$ctrl.address.data.state" required ></input-select>
     <input-text field-name="postalcode" meta="$ctrl.address.meta.postalcode" ng-model="$ctrl.address.data.postalcode" required pattern="\d{5}(?:[-\s]\d{4})?" mask="99999-9999" placeholder="Zip Code"></input-text>
     <input-text field-name="note" meta="$ctrl.address.meta.note" ng-model="$ctrl.address.data.note"  placeholder="Note" ></input-text>
-    <button type="submit" class="btn btn-success pull-right">Save</button>
+    <button type="submit" class="btn btn-success pull-right" ng-disabled="addressform.$invalid">Save</button>
 </form>
 
 <br/>

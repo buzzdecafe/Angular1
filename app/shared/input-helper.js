@@ -2,7 +2,6 @@
 var app = app || {};
 
 app.inputHelper = ( function () {
-
     var test = function(ctrl,pred){
 
         var parts = pred.field.split('.'),
@@ -15,6 +14,8 @@ app.inputHelper = ( function () {
 
         if (ctrl && pred.operator && pred.operand) {
             statement = "'" + ctrl + "'" + pred.operator + "'" + pred.operand + "'" ;
+        } else {
+            statement = "'" + ctrl + "'?true:false";
         }
 
         //HACK : need a safer way
