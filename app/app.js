@@ -49,13 +49,13 @@ var app = (function(){
 
         $transitions.onSuccess({}, function () {
             console.log('success to: ' + $state.current.name);
-            $rootscope.title = "ng-learn " + $state.current.name;
+            $rootScope.title = "ng-learn " + $state.current.name;
         });
 
     }]);
 
-    return{
-        myApp:myApp
-    }
+    return {
+        myApp: myApp
+    };
 
-})();
+}());
