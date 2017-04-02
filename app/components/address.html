@@ -11,12 +11,26 @@
     <input-text field-name="city" meta="$ctrl.address.meta.city" ng-model="$ctrl.address.data.city" minLength="2" ></input-text>
     <input-select field-name="state" meta="$ctrl.address.meta.state" ng-model="$ctrl.address.data.state" required ></input-select>
     <input-text field-name="postalcode" meta="$ctrl.address.meta.postalcode" ng-model="$ctrl.address.data.postalcode" required pattern="\d{5}(?:[-\s]\d{4})?" mask="99999-9999" placeholder="Zip Code"></input-text>
+    
+
+    <div class="col-xs-10 col-xs-offset-2">
+        <input-checkbox field-name="billingaddress" 
+                        meta="$ctrl.address.meta.billingaddress" 
+                        ng-model="$ctrl.address.data.billingaddress">
+        </input-checkbox>
+        <input-checkbox field-name="business" 
+                        meta="$ctrl.address.meta.business" 
+                        ng-model="$ctrl.address.data.business">
+        </input-checkbox>
+
+    </div>
+    
     <input-text field-name="note" meta="$ctrl.address.meta.note" ng-model="$ctrl.address.data.note"  placeholder="Note" ></input-text>
+    
     <button type="submit" class="btn btn-success pull-right" ng-disabled="addressform.$invalid">Save</button>
 </form>
-
 <br/>
-<!--<div>submitted: {{addressform.$submitted}}</div>-->
 
+<!--<div>submitted: {{addressform.$submitted}}</div>-->
 <!--<pre>{{addressform.$error | json}}</pre>-->
  

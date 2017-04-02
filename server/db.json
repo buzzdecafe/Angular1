@@ -36,6 +36,8 @@
                                                     {"key":"NH","value":"New Hampshire"},
                                                     {"key":"MA","value":"Massachusetts"}]},
                              "postalcode": {"label":"Zip","placeholder": "Postal Code"},
+                             "billingaddress" : {"label":"Billing Address"},
+                             "business" : {"label":"Business"},
                              "note": {"label": "Note", "showif": { "field":"address.data.unit"},
                                                     "disabledif": { "field":"address.data.unit",
                                                                    "operator": "===",
